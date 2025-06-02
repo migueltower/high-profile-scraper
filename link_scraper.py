@@ -1,13 +1,13 @@
+from pyairtable import Api
 import os
-from pyairtable import Api, Table
 
-# Airtable credentials from GitHub Secrets
 api_key = os.environ["AIRTABLE_API_KEY"]
 BASE_ID = "appwbCU6BAWOA1AQX"
 TABLE_ID = "tblb0yIYr91PzghXQ"
 
+# Proper method using .table()
 api = Api(api_key)
-table = Table(api_key, BASE_ID, TABLE_ID)
+table = api.table(BASE_ID, TABLE_ID)
 
 records = table.all(fields=["Suspect Name", "Case #"])
 
