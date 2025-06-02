@@ -16,5 +16,5 @@ for record in records:
     case_number = fields.get("Case #")
     if case_number:
         url = f"https://www.superiorcourt.maricopa.gov/docket/CriminalCourtCases/caseInfo.asp?caseNumber={case_number}"
-        table.update(record["id"], {"Courtminutes": url})
+        table.update(record["id"], {"Court Docket": url})
         print(f"Updated {fields.get('Suspect Name')} → {url}")
