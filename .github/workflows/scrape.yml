@@ -1,10 +1,9 @@
 name: Run Airtable Scraper
 
 on:
- workflow_dispatch:  # manually trigger
   schedule:
-    - cron: "45 15 * * 1-5"  # 8:45 AM MST (15:45 UTC), Mon–Fri
-    - cron: "45 23 * * 1-5"  # 4:45 PM MST (23:45 UTC), Mon–Fri
+    - cron: "0 15,23 * * 1-5"  # Every weekday at 3PM and 11PM UTC
+  workflow_dispatch:
 
 jobs:
   scrape:
